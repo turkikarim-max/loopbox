@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collection Points | LoopBox</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Leaflet CSS -->
+<link rel="stylesheet"
+href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+
+<body>
+
+    
+<header class="main-header">
+    <nav class="navbar">
+        <a href="index.html" class="logo">LoopBox</a>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#collection-points" class="active">Collection Points</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+    <section class="collection-hero">
+        <p>JOIN THE LOOP</p>
+        <h1>Find a Collection Point</h1>
+        <p>Return your packaging. Give it a second life.</p>
+    </section>
+
+    <section class="locations-section">
+        <h2>Our Collection Locations</h2>
+        <p>Find a convenient place to return your LoopBox packaging.</p>
+
+       <div class="location-card" onclick="showLocation(0)">
+    <h4>Location 1</h4>
+    <p>Address coming soon</p>
+    <span>View on map →</span>
+</div>
+
+<div class="location-card" onclick="showLocation(1)">
+    <h4>Location 2</h4>
+    <p>Address coming soon</p>
+    <span>View on map →</span>
+</div>
+
+<div class="location-card" onclick="showLocation(2)">
+    <h4>Location 3</h4>
+    <p>Address coming soon</p>
+    <span>View on map →</span>
+</div>
+
+            <div class="map-container">
+                <h3>Find Us on the Map</h3>
+                <div id="map">
+                    Map will be added here.
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 LoopBox Packaging. A greener future starts with us.</p>
+    </footer>
+<!-- Leaflet JavaScript -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+    // Initialize map
+    var map = L.map('map').setView([36.8065, 10.1815], 12);
+
+    // Add map tiles
+ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png?key=cb1_5fd3_1_acdb3efd48f4759ae86f9ca1', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    subdomains: 'abcd',
+    maxZoom: 20
+}).addTo(map);
+    // Example collection point
+    L.marker([36.8065, 10.1815])
+        .addTo(map)
+        .bindPopup('LoopBox Collection Point - Tunis');
+</script>
+</body>
+</html>
